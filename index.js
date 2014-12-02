@@ -30,7 +30,7 @@ module.exports = function(){
 
         var warning = new Error('unmatched ' + unmatched.join(', ')
             + ' before </' + tag + '>');
-        return dup.emit('warning', warning);
+        dup.emit('warning', warning);
       } 
     }
 
