@@ -7,6 +7,9 @@
 <div><span>foo<span></div>
 ```
 
+  [![build status](https://secure.travis-ci.org/micnews/html-validate-unbalanced.svg)](http://travis-ci.org/micnews/html-validate-unbalanced)
+
+
 ## Example
 
 ```js
