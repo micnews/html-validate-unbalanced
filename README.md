@@ -6,9 +6,12 @@
 ## Example
 
 ```js
-var html-validate-unbalanced = require('html-validate-unbalanced');
+var validate = require('html-validate-unbalanced');
 
-
+process.stdin
+  .pipe(validate())
+  .on('error', AAAAHA)
+  .pipe(process.stdout);
 ```
 
 ## Installation
