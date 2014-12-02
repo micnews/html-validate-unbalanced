@@ -7,7 +7,8 @@
   },
   "repository": "micnews/html-validate-unbalanced",
   "devDependencies": {
-    "tape": "*"
+    "concat-stream": "^1.4.7",
+    "tape": "^3.0.3"
   },
   "license": "MIT",
   "dependencies": {
