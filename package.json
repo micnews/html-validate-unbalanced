@@ -1,0 +1,18 @@
+{
+  "name": "html-validate-unbalanced",
+  "version": "0.0.0",
+  "description": "Spot unbalanced tag pairs",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": "micnews/html-validate-unbalanced",
+  "devDependencies": {
+    "tape": "*"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "duplexer2": "0.0.2",
+    "html-tokenize": "^1.2.2",
+    "through2": "^0.6.3"
+  }
+}
