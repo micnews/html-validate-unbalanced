@@ -6,7 +6,7 @@ module.exports = function(){
   var stack = [];
   var tok = tokenize();
   var tr = through.obj(function(row, enc, done){
-    this.push(row);
+    this.push(row[1]);
 
     var open = row[0] == 'open';
     var close = row[0] == 'close';
