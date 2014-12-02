@@ -1,7 +1,11 @@
 
 # html-validate-unbalanced
 
-  Spot unbalanced tag pairs
+  Spot unbalanced tag pairs, like
+
+```html
+<div><span>foo<span></div>
+```
 
 ## Example
 
