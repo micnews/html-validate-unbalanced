@@ -28,9 +28,9 @@ module.exports = function(){
           if (stack[i] != tag) unmatched.push('<' + stack[i] + '>');
         }
 
-        var err = new Error('unmatched ' + unmatched.join(', ')
+        var warning = new Error('unmatched ' + unmatched.join(', ')
             + ' before </' + tag + '>');
-        return dup.emit('error', err);
+        return dup.emit('warning', warning);
       } 
     }
 

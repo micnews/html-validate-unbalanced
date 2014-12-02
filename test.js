@@ -7,7 +7,7 @@ test('unbalanced', function(t){
   var html = '<div><span>foo<span></div>';
   var v = validate();
   v.on('data', function(){});
-  v.on('error', function(err){
+  v.on('warning', function(err){
     t.equal(err.message, 'unmatched <span>, <span> before </div>')
   });
   v.end(html);

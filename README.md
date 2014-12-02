@@ -17,7 +17,7 @@ var validate = require('html-validate-unbalanced');
 
 process.stdin
   .pipe(validate())
-  .on('error', AAAAHA)
+  .on('warning', AAAAHA)
   .pipe(process.stdout);
 ```
 
