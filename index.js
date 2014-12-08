@@ -44,6 +44,14 @@ module.exports = function(){
     }
 
     done();
+  }, function(done){
+    if (!stack.length || warned) return done();
+    var unmatched = stack.map(function(tag){
+      return '<' + tag + '>';
+    });
+    var warning = new Error('unmatched ' + unmatched.join(', '));
+    dup.emit('warning', warning);
+    done();
   });
   tok.pipe(tr);
   var dup = duplex(tok, tr);
