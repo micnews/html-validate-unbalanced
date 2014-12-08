@@ -9,6 +9,9 @@
 
   [![build status](https://secure.travis-ci.org/micnews/html-validate-unbalanced.svg)](http://travis-ci.org/micnews/html-validate-unbalanced)
 
+## Stability
+
+  This module is undergoing heavy testing and is likely to be broken. Please open issues with the exact html for which it misbehaved.
 
 ## Example
 
