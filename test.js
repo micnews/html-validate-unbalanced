@@ -19,6 +19,9 @@ test('balanced', function(t){
   t.plan(1);
   var html = '<div><span>foo</span></div>';
   var v = validate();
+  v.on('warning', function(err){
+    t.error(err);
+  });
   v.pipe(concat(function(out){
     t.equal(out.toString(), html);
   }));
