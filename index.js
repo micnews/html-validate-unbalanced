@@ -1,6 +1,7 @@
 var tokenize = require('html-tokenize');
 var through = require('through2');
 var duplex = require('duplexer2');
+var selfClosing = require('./lib/self-closing');
 
 module.exports = function(){
   var stack = [];
@@ -15,6 +16,7 @@ module.exports = function(){
     var tag = row[1].toString()
       .replace(/^<(\/|!)?/, '')
       .replace(/>$/, '');
+    if (selfClosing(tag)) return done();
 
     // for each tag, ensure tags opened after it are closed before it is closed
 
