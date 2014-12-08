@@ -6,8 +6,10 @@ var selfClosing = require('./lib/self-closing');
 module.exports = function(){
   var stack = [];
   var tok = tokenize();
+  var warned = false;
   var tr = through.obj(function(row, enc, done){
     this.push(row[1]);
+    if (warned) return done();
 
     var open = row[0] == 'open';
     var close = row[0] == 'close';
@@ -31,6 +33,7 @@ module.exports = function(){
           if (stack[i] != tag) unmatched.push('<' + stack[i] + '>');
         }
 
+        warned = true;
         var warning = new Error('unmatched ' + unmatched.join(', ')
             + ' before </' + tag + '>');
         dup.emit('warning', warning);
