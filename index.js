@@ -13,7 +13,9 @@ module.exports = function(){
     if (!open && !close) return done();
 
     var tag = row[1].toString();
-    tag = /^<\/?(.+)>$/.exec(tag)[1];
+    var match = /^<\/?(.+)>$/.exec(tag);
+    if (!match) return done();
+    tag = match[1];
 
     // for each tag, ensure tags opened after it are closed before it is closed
 

@@ -28,3 +28,13 @@ test('balanced', function(t){
   v.end(html);
 });
 
+test('comment', function(t){
+  t.plan(1);
+  var html = '<!-- hey --><span>foo</span>';
+  var v = validate();
+  v.pipe(concat(function(out){
+    t.equal(out.toString(), html);
+  }));
+  v.end(html);
+});
+
