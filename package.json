@@ -1,6 +1,6 @@
 {
   "name": "html-validate-unbalanced",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Spot unbalanced tag pairs",
   "scripts": {
     "test": "make test"
