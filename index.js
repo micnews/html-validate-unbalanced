@@ -15,8 +15,11 @@ module.exports = function(){
     var close = row[0] == 'close';
     if (!open && !close) return done();
 
+    // ignore comments
+    if (/(^<!|-->$)/.test(row[1].toString())) return done();
+
     var tag = row[1].toString()
-      .replace(/^<(\/|!)?/, '')
+      .replace(/^<\/?/, '')
       .replace(/>$/, '');
     if (selfClosing(tag)) return done();
 

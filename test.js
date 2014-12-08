@@ -54,6 +54,19 @@ test('self closing', function(t){
   v.end(html);
 });
 
+test('doctype', function(t){
+  t.plan(1);
+  var html = '<!DOCTYPE html><span>foo</span>';
+  var v = validate();
+  v.on('warning', function(err){
+    t.error(err);
+  });
+  v.pipe(concat(function(out){
+    t.equal(out.toString(), html);
+  }));
+  v.end(html);
+});
+
 test('warn once', function(t){
   t.plan(2);
   var html = '<span></div><strong></table>';
