@@ -93,4 +93,16 @@ test('warn once', function(t){
   v.end(html);
 });
 
+test('ignore attributes', function(t){
+  t.plan(1);
+  var html = '<html class="class" id="id"></html>';
+  var v = validate();
+  v.on('warning', function(err){
+    t.error(err);
+  });
+  v.pipe(concat(function(out){
+    t.equal(out.toString(), html);
+  }));
+  v.end(html);
+});
 

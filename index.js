@@ -20,7 +20,8 @@ module.exports = function(){
 
     var tag = row[1].toString()
       .replace(/^<\/?/, '')
-      .replace(/>$/, '');
+      .replace(/>$/, '')
+      .replace(/ .+$/, '');
     if (selfClosing(tag)) return done();
 
     // for each tag, ensure tags opened after it are closed before it is closed
